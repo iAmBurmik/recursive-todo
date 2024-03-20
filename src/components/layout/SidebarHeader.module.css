@@ -1,0 +1,23 @@
+.header {
+  display: flex;
+  align-items: center;
+  padding: 20px 30px;
+  border-bottom: 3px solid rgba(253, 218, 255, 1);
+  color: gray;
+}
+
+.header a {
+  text-decoration: none;
+  padding: 0;
+  color: inherit;
+}
+
+.header svg {
+  margin-left: 30px;
+  height: 20px;
+  width: 20px;
+}
+
+.header svg:hover {
+  color: #43efa9;
+}

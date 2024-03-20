@@ -1,0 +1,85 @@
+.todoItem {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  height: 26px;
+}
+
+.todoItem .new:hover path {
+  fill: #43efa9;
+}
+
+.rotare {
+  transform: rotate(90deg);
+}
+
+.delete {
+  transform: rotate(45deg);
+}
+
+.subTaskShower {
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.todoItem svg {
+  width: 15px;
+  height: 15px;
+}
+
+.title {
+  cursor: pointer;
+  color: black;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 15px;
+}
+
+.margin-left {
+  margin-left: 26px;
+}
+
+.icons {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+}
+
+.subTasks {
+  display: block;
+  margin-left: 24px;
+}
+
+.subTasks .title {
+  color: gray;
+}
+
+.hide {
+  display: none;
+}
+
+.completeChanger {
+  width: 16px;
+  height: 16px;
+}
+
+.completeChanger svg.completed path {
+  fill: #43efa9;
+}
+
+.completeChanger:hover svg.completed path {
+  fill: black;
+}
+
+.completeChanger svg.uncompleted path {
+  fill: black;
+}
+
+.completeChanger:hover svg.uncompleted path {
+  fill: #43efa9;
+}
+
+.todoItem .delete:hover path {
+  fill: red;
+}

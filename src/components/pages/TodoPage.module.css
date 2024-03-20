@@ -1,0 +1,48 @@
+.todo-page {
+  height: 100%;
+  flex: 1;
+  background-image: linear-gradient(
+    102.7deg,
+    rgba(253, 218, 255, 1) 8.2%,
+    rgb(174, 110, 211) 19.6%,
+    rgba(173, 205, 252, 1) 36.8%,
+    rgba(173, 252, 244, 1) 73.2%,
+    rgba(202, 248, 208, 1) 90.9%
+  );
+  border-top-left-radius: 15px;
+}
+
+.input-section {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 2px solid #808080;
+  width: auto;
+}
+
+.input-section h1 {
+  width: 100%;
+  font-family: inherit;
+}
+
+.input-section input {
+  width: 100%;
+  font-size: 32px;
+  font-weight: bold;
+  font-family: inherit;
+  border: none;
+}
+
+.area-section {
+  padding: 10px 0;
+}
+
+.area-section textarea {
+  font-size: 16px;
+  font-family: inherit;
+  border: none;
+  background: none;
+  resize: none;
+  width: 100%;
+  height: auto;
+}

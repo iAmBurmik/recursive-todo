@@ -1,0 +1,13 @@
+.button {
+  cursor: pointer;
+  font-size: inherit;
+  font-family: inherit;
+  letter-spacing: inherit;
+  text-transform: uppercase;
+  color: black;
+  background-color: transparent;
+  line-height: 35px;
+  padding: 0 15px;
+  border: 2px solid #43efa9;
+  border-radius: 5px;
+}

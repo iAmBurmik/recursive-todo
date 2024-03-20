@@ -1,25 +1,51 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Sidebar from './components/layout/Sidebar';
+import MainPage from './components/pages/MainPage';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import TodoPage from './components/pages/TodoPage';
+import ModalWindow from './components/ui/ModalWindow';
+import Button from './components/ui/Button';
+import { useDispatch } from 'react-redux';
+import { addTodo } from './store/todoSlice';
+import { useAppSelector } from './hooks/hook';
+import { clearFields } from './store/inputSlice';
 
 function App() {
+  const [isModalShown, setIsModalShown] = useState(false);
+  const dispatch = useDispatch();
+  const input = useAppSelector((state) => state.input);
+
+  function modalWindowToggler() {
+    setIsModalShown((prevModalState) => !prevModalState);
+  }
+
+  const addTodoHandler = () => {
+    if (input.title.length > 0) {
+      dispatch(
+        addTodo({
+          title: input.title as string,
+          text: input.description as string,
+        })
+      );
+      dispatch(clearFields());
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        {isModalShown && (
+          <ModalWindow modalToggler={modalWindowToggler}>
+            <Button btnText="add todo" onClick={addTodoHandler} />
+          </ModalWindow>
+        )}
+        <Sidebar modalToggler={modalWindowToggler} />
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/:id" element={<TodoPage />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
